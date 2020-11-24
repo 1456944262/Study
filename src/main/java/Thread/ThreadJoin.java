@@ -21,7 +21,7 @@ public class ThreadJoin {
             previous=thread;
         }
         TimeUnit.SECONDS.sleep(5);
-        System.out.println(Thread.currentThread().getName()+"terminate.");
+        //System.out.println(Thread.currentThread().getName()+"terminate.");
     }
     static class Domino implements Runnable{
         private Thread thread;

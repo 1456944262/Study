@@ -46,6 +46,7 @@ public class QueueDemo {
 
          //定义生产者
           class Producer implements  Runnable{
+              @Override
               public void run() {
                   try {
                   while (true){
@@ -63,7 +64,7 @@ public class QueueDemo {
           }
 
           class Consumer implements  Runnable{
-
+              @Override
               public void run() {
                   try {
                   while (true){

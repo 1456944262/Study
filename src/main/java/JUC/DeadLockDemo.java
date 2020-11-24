@@ -17,13 +17,14 @@ public class DeadLockDemo {
     }
     public static  void deadLock(){
         Thread threada=new Thread(new Runnable() {
+            @Override
             public void run() {
                     synchronized (resourcea){
-                        System.out.println("get resource a");
+                        System.out.println("threada get resource a");
                         try{
                             Thread.sleep(3000);
                             synchronized (resourceb){
-                                System.out.println("get resource b");
+                                System.out.println("threada get resource b");
                             }
                         }catch (Exception e){
                             e.printStackTrace();
@@ -33,11 +34,12 @@ public class DeadLockDemo {
         });
 
         Thread threadb=new Thread(new Runnable() {
+            @Override
             public void run() {
                 synchronized (resourceb){
-                    System.out.println("get resource b");
+                    System.out.println("threadb get resource b");
                     synchronized (resourcea){
-                        System.out.println("get resource a");
+                        System.out.println("threadb get resource a");
                     }
                 }
             }
